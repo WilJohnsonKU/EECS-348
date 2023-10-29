@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Password Verification</title>
+        <link rel="stylesheet" type="text/css" href="./css/practice1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <div class="video-card">
+                <h2>Please enter a new password:</h2>
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+                <div style="height:10px"></div>
+                <label for="verify">Verify:</label>
+                <input type="password" id="verify">
+
+                <p style="color:red;" id="status">Password must be at least 8 characters</p>
+            </div>
+        </main>
+        <script>
+            var currentPassword = "";
+            var verifyPassword = "";
+
+            const status = document.getElementById("status");
+
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.id === "password") {
+                        currentPassword = this.value;
+                    } else {
+                        verifyPassword = this.value;
+                    }
+                    if (currentPassword.length < 8){
+                        status.style.setProperty("color", "red");
+                        status.textContent = "Password must be at least 8 characters";
+                    } else {
+                        if (currentPassword != verifyPassword){
+                            status.style.setProperty("color", "red");
+                            status.textContent = "The passwords do not match!";
+                        } else {
+                            status.style.setProperty("color", "green");
+                            status.textContent = "Your passwords match!";
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
