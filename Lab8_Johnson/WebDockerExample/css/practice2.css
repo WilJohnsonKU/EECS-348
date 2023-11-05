@@ -1,0 +1,22 @@
+:root {
+    --text-color: #000000;
+    --border-width: 1px;
+  }
+
+  body {
+    padding: 2%;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .effect-area {
+    padding: 10px;
+    border: var(--border-width) solid var(--text-color);
+  }
+
+  .effect-area p, h1 {
+    color: var(--text-color);
+  }
+
+  .panel {
+    margin-bottom: 25px;
+  }
