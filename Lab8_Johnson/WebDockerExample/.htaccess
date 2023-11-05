@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Check if requested filename.html exists, serve it if so
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+# If the above condition doesn't match, check for filename.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]

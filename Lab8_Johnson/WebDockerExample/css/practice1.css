@@ -1,0 +1,105 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+    padding: 2%;
+    height: 100vh;
+    background-image: url('../images/bckg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4a4a4a;
+    height: 60vh;
+}
+
+a {
+    color: #4663a2;
+    text-decoration: none;
+}
+
+.profile-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin: 40px;
+}
+
+.video-card {
+    width: 500px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-card:hover, .video-card:hover {
+    transform: scale(1.1);
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info-list-item { 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}

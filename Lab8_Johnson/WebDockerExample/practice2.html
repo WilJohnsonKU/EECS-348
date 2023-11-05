@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Text Control Example</title>
+        <link rel="stylesheet" type="text/css" href="./css/practice2.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="effect-area panel">
+            <h1>Example Text Area</h1>
+            <p>Manipulating the values in the configuration area will change this text!</p>
+        </div>
+        <div class="panel" id="settings-panel">
+            <label for="text-color">Text Color (RGB):</label>
+            <input type="text" id="text-color" placeholder="0,0,0">
+            <div style="width:10px"></div>
+            <label for="border-width">Border Width:</label>
+            <input type="range" id="border-width" min="1" max="10" value="1">
+        </div>
+        <script>
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.id === "border-width") {
+                        document.documentElement.style.setProperty(`--border-width`, this.value + 'px');
+                    } else {
+                        document.documentElement.style.setProperty(`--text-color`, `rgb(${this.value})`);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
+
